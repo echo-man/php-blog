@@ -1,9 +1,10 @@
 <?php
+
 function mysql_safe_string($value) {
 	$value = trim($value);
-	if(empty($value))			return 'NULL';
-	elseif(is_numeric($value))	return $value;
-	else						return "'".mysql_real_escape_string($value)."'";
+	if(empty($value)) return 'NULL';
+	elseif(is_numeric($value)) return $value;
+	else return "'".mysql_real_escape_string($value)."'";
 }
 
 function mysql_safe_query($query) {
